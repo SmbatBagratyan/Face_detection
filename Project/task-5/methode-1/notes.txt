@@ -1,0 +1,14 @@
+part of macro
+
+open("C:/Users/smbba/OneDrive/Desktop/Image processing/Project/img/140-14.jpg");
+
+run("Median...", "radius=3");
+run("Binary Layers");
+
+selectWindow("layer_0_");
+setOption("BlackBackground", true);
+run("Convert to Mask");
+run("Median...", "radius=3");
+run("Skeletonize");
+run("Invert");
+saveAs("Tiff", "C:/Users/smbba/OneDrive/Desktop/Image processing/Project/task-5/140-14/layer_0_.tif");

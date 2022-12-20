@@ -1,0 +1,16 @@
+type-1 
+
+steps - median(3) , binary layers
+
+type-2
+
+binary layers
+
+type-3
+
+mean(2) , binary layers ,  Gaussian Blur(3.00)
+
+type-4
+
+median(5) , binary layers, median(2)
+

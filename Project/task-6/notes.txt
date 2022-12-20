@@ -1,0 +1,54 @@
+type -1
+steps -- open original img , apply mean(2) , call plugin to resize , apply median(3) , 
+binary layers, fill holls , layer_1 and layer 2, result of layer_1 and layer_3 ,
+save the last result img (please don't give attantion to img name).
+-------------------------------------------------------------------------------------------
+type-2
+run("Mean...", "radius=2");
+run("Resize f");
+run("Median...", "radius=2");
+run("Binary Layers");
+selectWindow("layer_1_");
+run("Invert LUT");
+run("Fill Holes");
+run("Invert");
+run("Analyze Particles...", "  show=Ellipses display clear");
+
+selectWindow("layer_2_");
+run("Invert LUT");
+run("Fill Holes");
+run("Invert");
+run("Analyze Particles...", "  show=Ellipses display clear");
+
+selectWindow("layer_3_");
+run("Invert LUT");
+run("Fill Holes");
+run("Invert");
+run("Analyze Particles...", "  show=Ellipses display clear");
+
+imageCalculator("AND create", "Drawing of layer_1_","Drawing of layer_2_");
+selectWindow("Result of Drawing of layer_1_");
+imageCalculator("AND create", "Result of Drawing of layer_1_","Drawing of layer_3_");
+selectWindow("Result of Result of Drawing of layer_1_");saveAs("Tiff", "C:/Users/smbba/OneDrive/Desktop/Image processing/Project/task-6/136-01/layer_0_.tif");
+
+---------------------------------------------------------------------------------------------------
+type-3
+
+open("C:/Users/smbba/OneDrive/Desktop/Image processing/Project/img/136-01.jpg");
+run("Mean...", "radius=2");
+run("Resize f");
+run("Median...", "radius=2");
+run("Binary Layers");
+selectWindow("layer_0_");
+setOption("BlackBackground", true);
+run("Convert to Mask");
+run("Median...", "radius=3");
+run("Skeletonize");
+run("Invert");
+saveAs("Tiff", "C:/Users/smbba/OneDrive/Desktop/Image processing/Project/task-6/136-01/layer_0_.tif");
+close();
+close();
+close();
+close();
+close();
+close();

@@ -1,0 +1,1 @@
+In every methode you can find part of macro code (in txt file in the buttom of the folder)

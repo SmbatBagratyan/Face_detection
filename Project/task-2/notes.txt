@@ -1,0 +1,4 @@
+for every img steps of AND
+
+layer_1 and layer_2
+result_of_layer_1 and layer_3 (result saved)
